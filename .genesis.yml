@@ -1,0 +1,18 @@
+projects:
+  - name: "Go FaaS Template"
+    root: "base"
+    language:
+      name: "Go"
+      version: "1.12"
+    runtime:
+      - name: "knative"
+      - name: "kubernetes"
+      - name: "lambda"
+    options:
+      required:
+        - name: "git_repo"
+        - name: "go_package"
+        - name: "exe_name"
+          default: "mylambda"
+        - name: "docker_base"
+          default: "alpine:3.8"
