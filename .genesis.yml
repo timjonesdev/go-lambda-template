@@ -9,6 +9,8 @@ projects:
       - name: "kubernetes"
       - name: "lambda"
     options:
+      - name: "project_name"
+        required: true
       - name: "git_repo"
         required: true
       - name: "go_package"
