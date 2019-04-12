@@ -20,3 +20,5 @@ projects:
       - name: "docker_base"
         required: true
         default: "alpine:3.8"
+      - name: "go_mod_dependencies"
+        default: ""
