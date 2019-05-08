@@ -40,7 +40,7 @@ projects:
             imageUrl: "assets/img/logos/platform/lambda-logo.png"
             description: "Scale from zero to N, and cold start <50ms"
     options:
-      - name: "project_name"
+      - name: "projectName"
         required: true
         groupName: "Service Definition"
         formField:
@@ -52,7 +52,7 @@ projects:
           validation: "^[a-z0-9\\-]+$"
           validationErrorMessage: "Lower Case, no spaces or special characters (except hyphens)"
           hint: "Lower Case, no spaces or special characters (except hyphens)"
-      - name: "git_repo"
+      - name: "gitHost"
         required: true
         groupName: "Service Definition"
         formField:
