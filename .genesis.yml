@@ -71,6 +71,15 @@ projects:
       - name: "exe_name"
         default: "mylambda"
         groupName: "Service Definition"
+        formField:
+          type: "TEXT"
+          placeholder: "Executable Name"
+          label: "Executable Name"
+          formControlName: "exe_name"
+          required: true
+          validation: "^[a-z0-9\\-]+$"
+          validationErrorMessage: "Lower Case, no spaces or special characters (except hyphens)"
+          hint: "Lower Case, no spaces or special characters (except hyphens)"
       - name: "docker_base"
         required: true
         default: "alpine:3.8"
