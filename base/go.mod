@@ -1,7 +1,3 @@
-module {{git_repo}}/{{go_package}}
+module {{git_repo}}/{{project_name}}
 
 go 1.12
-
-require (
-        {{go_mod_dependencies}}
-)
