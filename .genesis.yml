@@ -63,10 +63,10 @@ projects:
           required: true
           selectOptions:
             - id: 1
-              value: "BitBucket"
+              value: "egbitbucket.dtvops.net"
               iconUrl: "assets/img/logos/git/bitbucket-icon.png"
             - id: 2
-              value: "GitHub"
+              value: "github.com"
               iconUrl: "assets/img/logos/git/github-icon.png"
       - name: "exe_name"
         default: "mylambda"
