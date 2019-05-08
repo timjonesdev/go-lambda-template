@@ -1,24 +1,88 @@
 projects:
   - name: "Go FaaS Template"
     root: "base"
+    formGroups:
+      - displayName: "Service Definition"
+        imageGroup: false
+      - displayName: "Runtime Selection"
+        imageGroup: true
     language:
       name: "Go"
       version: "1.12"
     runtime:
-      - name: "knative"
-      - name: "kubernetes"
-      - name: "lambda"
+      names:
+        - "knative"
+        - "kubernetes"
+        - "lambda"
+      groupName: "Runtime Selection"
+      formField:
+        type: "IMAGE_BUTTON_GROUP"
+        placeholder: "runtime"
+        formControlName: "runtime"
+        label: "Runtime"
+        imageButtons:
+          - name: "kubernetes"
+            type: "DEPLOYMENT_TYPE"
+            displayName: "Micro-Service"
+            iconUrl: "assets/img/logos/platform/kubernetes-logo.png"
+            imageUrl: "assets/img/logos/platform/kubernetes-logo.png"
+            description: "Reliable minimum >0"
+          - name: "knative"
+            type: "DEPLOYMENT_TYPE"
+            displayName: "FaaS"
+            iconUrl: "assets/img/logos/platform/knative-logo.png"
+            imageUrl: "assets/img/logos/platform/knative-logo.png"
+            description: "Scale from zero to N, and cold start <50ms"
+          - name: "labmda"
+            type: "DEPLOYMENT_TYPE"
+            displayName: "FaaS"
+            iconUrl: "assets/img/logos/platform/lambda-logo.png"
+            imageUrl: "assets/img/logos/platform/lambda-logo.png"
+            description: "Scale from zero to N, and cold start <50ms"
     options:
       - name: "project_name"
         required: true
+        groupName: "Service Definition"
+        formField:
+          type: "TEXT"
+          placeholder: "Project Name"
+          label: "Project Name"
+          formControlName: "projectName"
+          required: true
+          validation: "^[a-z0-9\\-]+$"
+          validationErrorMessage: "Lower Case, no spaces or special characters (except hyphens)"
+          hint: "Lower Case, no spaces or special characters (except hyphens)"
       - name: "git_repo"
         required: true
-      - name: "go_package"
-        required: true
+        groupName: "Service Definition"
+        formField:
+          type: "SELECT"
+          placeholder: "Git Host"
+          label: "Git Host"
+          formControlName: "gitHost"
+          required: true
+          selectOptions:
+            - id: 1
+              value: "BitBucket"
+              iconUrl: "assets/img/logos/git/bitbucket-icon.png"
+            - id: 2
+              value: "GitHub"
+              iconUrl: "assets/img/logos/git/github-icon.png"
       - name: "exe_name"
         default: "mylambda"
+        groupName: "Service Definition"
       - name: "docker_base"
         required: true
         default: "alpine:3.8"
-      - name: "go_mod_dependencies"
-        default: ""
+        groupName: "Service Definition"
+        formField:
+          type: "SELECT"
+          placeholder: "Docker Base Image"
+          label: "Docker Base Image"
+          formControlName: "docker_base"
+          required: true
+          selectOptions:
+            - id: 1
+              value: "alpine:3.8"
+            - id: 2
+              value: "scratch"
