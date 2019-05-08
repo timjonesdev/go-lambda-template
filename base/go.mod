@@ -1,3 +1,3 @@
-module {{git_repo}}/{{project_name}}
+module {{gitHost}}/{{projectName}}
 
 go 1.12
