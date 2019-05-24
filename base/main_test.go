@@ -8,6 +8,6 @@ func TestHandleRequest(t *testing.T) {
         if returnVal != testVal {
 		t.Errorf("Return incorrect, got: %s, expected: %s",returnVal,testVal)
 	}
-	print (a);
+	_ = a
 }
     
