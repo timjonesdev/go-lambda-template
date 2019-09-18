@@ -1,0 +1,11 @@
+#!/usr/bin/env groovy
+@Library('cicd-common@master')
+import com.att.eg.cicd.*
+
+env.environment = 'dev-int'
+env.platform = 'go-lambda'
+env.appDeploy = 'false'
+env.target = 'aws'
+
+def workflow = new WorkflowFactory().getWorkflow(env.platform, this)
+workflow.create()
